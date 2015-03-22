@@ -9,6 +9,7 @@
   "author": "George M Kroid <kroid@yandex.ru>",
   "license": "ISC",
   "dependencies": {
+    "anymatch": "^1.1.0",
     "chokidar": "^1.0.0-rc4",
     "underscore": "^1.8.2"
   }

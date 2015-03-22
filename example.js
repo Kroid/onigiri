@@ -1,8 +1,19 @@
-var Source = require('./lib/source');
+var path = require('path');
+var Controller = require('./lib/controller');
 
-var source = new Source('./.tmp/**/*', true, function(event, path) {
-  source.get(path, function(err, content) {
-    console.log(path);
-    console.log(String(content));
-  });
-});
+var config = {
+  root: path.join(__dirname, '.tmp'),
+  watch: ['index.html', 'scripts/**/*.js'],
+  src: [
+    {
+      files: ['index.html'],
+      // transform: 'function or list of functions',
+      // beforeTransform: 'function',
+      // afterTransform: 'function',
+      // extension: 'after transform, not required'
+    }
+  ]
+}
+
+
+new Controller(config, 'serve');
