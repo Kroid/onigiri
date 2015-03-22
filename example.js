@@ -1,9 +1,10 @@
 var path = require('path');
+var sass = require('node-sass');
 var Controller = require('./lib/controller');
 
 var config = {
   root: path.join(__dirname, '.tmp'),
-  watch: ['index.html', 'scripts/**/*.js'],
+  watch: ['**/*'],
   src: [
     {
       files: ['index.html'],
@@ -11,6 +12,25 @@ var config = {
       // beforeTransform: 'function',
       // afterTransform: 'function',
       // extension: 'after transform, not required'
+    },
+    {
+      files: '**/*.js'
+    },
+    {
+      files: 'styles/app.scss',
+      transform: function(_path, buffer, source, cb) {
+        sass.render({
+          data: String(buffer),
+          importer: function(url, prev, done) {
+            source.get(url, function(_path, buffer) {
+              done({contents: String(buffer)})
+            });
+          }
+        }, function(err, res) {
+          cb(_path, res.css);
+        })
+
+      }
     }
   ]
 }
