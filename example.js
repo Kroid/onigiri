@@ -7,7 +7,7 @@ var config = {
   watch: ['**/*'],
   src: [
     {
-      files: ['index.html'],
+      files: ['index.jade'],
       // transform: 'function or list of functions',
       // beforeTransform: 'function',
       // afterTransform: 'function',
@@ -18,19 +18,6 @@ var config = {
     },
     {
       files: 'styles/app.scss',
-      transform: function(_path, buffer, source, cb) {
-        sass.render({
-          data: String(buffer),
-          importer: function(url, prev, done) {
-            source.read(url, function(buffer) {
-              done({contents: String(buffer)})
-            });
-          }
-        }, function(err, res) {
-          cb(_path, res.css);
-        })
-
-      }
     }
   ]
 }
