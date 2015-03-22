@@ -12,6 +12,7 @@
     "anymatch": "^1.1.0",
     "chokidar": "^1.0.0-rc4",
     "node-sass": "^3.0.0-alpha.0",
+    "path-is-absolute": "^1.0.0",
     "underscore": "^1.8.2"
   }
 }

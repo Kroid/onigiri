@@ -22,7 +22,7 @@ var config = {
         sass.render({
           data: String(buffer),
           importer: function(url, prev, done) {
-            source.get(url, function(_path, buffer) {
+            source.read(url, function(buffer) {
               done({contents: String(buffer)})
             });
           }
