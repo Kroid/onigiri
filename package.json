@@ -6,8 +6,19 @@
   "scripts": {
     "test": "./node_modules/.bin/mocha"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kroid/onigiri"
+  },
   "author": "George M Kroid <kroid@yandex.ru>",
   "license": "ISC",
+  "keywords": [
+    "frontent",
+    "watch",
+    "serve",
+    "builder",
+    "automatization"
+  ],
   "dependencies": {
     "anymatch": "^1.1.0",
     "chokidar": "^1.0.0-rc4",
