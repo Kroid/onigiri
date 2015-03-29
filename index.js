@@ -1,8 +1,8 @@
 var _ = require('underscore');
-var Source = require('./source');
-var Result = require('./result');
-var Serve  = require('./serve');
-var Controller = require('./controller');
+var Controller = require('./lib/controller');
+var Serve  = require('./lib/serve');
+var Source = require('./lib/source');
+var Result = require('./lib/result');
 
 function init(options) {
   var source = new Source({

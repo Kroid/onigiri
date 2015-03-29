@@ -1,7 +1,7 @@
 {
-  "name": "web-builder",
-  "version": "0.0.0",
-  "description": "",
+  "name": "onigiri",
+  "version": "0.0.1",
+  "description": "Automatization tool for frontend works: compile, build, serve",
   "main": "index.js",
   "scripts": {
     "test": "./node_modules/.bin/mocha"
